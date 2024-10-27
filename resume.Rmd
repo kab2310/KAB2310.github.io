@@ -1,0 +1,34 @@
+---
+title: "Academic and Professional Experience
+output: html_document
+---
+
+# Education
+- **Master of Public Health** - Columbia University (2025)
+  - Sociomedical Sciences 
+  - Certificate in Infectious Disease Epidemiology
+- **Bachelor of Science** - George Washington University (2023)
+  - Major: Public Health
+  - Minor: Africana Studies and Sociology
+  
+#  Research Experience 
+- **Data Management Analyst** - ICAP, Columbia University
+  - Assist with prompt review of all data queries and their immediate resolutions.
+  - Identify problem areas with data collection, report findings to the project leadership, and develop appropriate corrective measures with input from team. 
+- **National Center for Health Statistics Summer Research Intern** - CDC, National Center for Health Statistics
+  - Conducted research on suicide disparities within the African American community.
+  - Published findings in the CDC's Morbidity and Mortality Weekly Report.
+- **Research Assistant** - Spatial Epidemiology Lab Unit
+  - Support quantitative data collection activities such as monitoring survey data to understand differences in HIV risk behavior, incidence, and intervention effects across geographic areas through RedCap.
+  - Conduct literature reviews by reading 50 articles to support research and grant writing initiatives focused on HIV awareness.
+
+## Teaching Experience
+- **Teaching Assistant for Quantitative Research Methods** - Columbia University 
+  - Assisted in Quantitative Research Methods course,  .
+- **Teaching Assistant** - Columbia Summer Public Health Scholars Program
+  - Assisted in Health Disparities course and mentored students.providing acandemic support to first year graduate students.
+- **Teaching Assistant** - APHA Introduction to Biostatistics Course
+  - Exposed Non-statisticians to Biostatistics and Epidemiology.
+
+# Skills
+- Qualitative Research, Needs Assessment, Scientific Writing, Statistical Reporting.
