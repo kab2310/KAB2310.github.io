@@ -12,6 +12,8 @@ navbar:
       href: https://github.com/kab2310
     - icon: fa-envelope fa-lg
       href: mailto:kab2310@cumc.columbia.edu
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/kamiahb
 output:
   html_document:
     theme: cerulean
