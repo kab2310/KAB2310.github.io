@@ -29,7 +29,7 @@ ny_noaa_sample <- ny_noaa |>
 
 ### Plots for NY NOAA Data.
 
-### Scatterplot of Temperature vs. Precipitation
+#### Scatterplot of Temperature vs. Precipitation
 
 ```{r}
 plot_ly(ny_noaa_sample, x = ~tmax, y = ~prcp, type = 'scatter', mode = 'markers') |>
