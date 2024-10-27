@@ -1,0 +1,76 @@
+---
+title: "Data Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(plotly)
+library(p8105.datasets)
+library(dplyr)
+library(tidyr)
+library(lubridate)
+library(janitor)
+```
+
+  {data-width=650}
+-----------------------------------------------------------------------
+
+#### I am loading the NY NOAA dataset from the p8105 dataset. I decided to randomly sample 1000 from the complete dataset as it is pretty large.
+
+```{r}
+data("ny_noaa", package = "p8105.datasets")
+ny_noaa_sample <- ny_noaa |>
+  filter(!is.na(tmax)) |> 
+  slice_sample(n = 1000)
+```
+ {data-width=350}
+-----------------------------------------------------------------------
+
+### Plots for NY NOAA Data.
+
+#### Scatterplot of Precipitation vs. Temperature
+```{r}
+plot_ly(ny_noaa_sample, x = ~tmax, y = ~prcp, type = 'scatter', mode = 'markers') |>
+  layout(title = "Scatter Plot of Temperature vs. Precipitation",
+         xaxis = list(title = "Max Temperature (tmax)"),
+         yaxis = list(title = "Precipitation (prcp)"))
+```
+
+##### Line Plot of Max Temperature Over Time
+```{r}
+plot_ly(ny_noaa_sample, x = ~date, y = ~tmax, type = 'scatter', mode = 'lines') |>
+  layout(title = "Line Plot of Max Temperature Over Time",
+         xaxis = list(title = "Date"),
+         yaxis = list(title = "Max Temperature (tmax)"))
+```
+
+##### Bar Plot of Average Maximum Temperature By Month
+```{r}
+ny_noaa_sample <- ny_noaa_sample |>
+  mutate(
+    tmax = as.numeric(tmax),    
+    tmin = as.numeric(tmin),    
+    month = month(date, label = TRUE) 
+  ) |>
+  filter(!is.na(tmax))
+```
+
+```{r}
+ny_noaa_summary <- ny_noaa_sample |>
+  group_by(month) |>
+  summarize(avg_tmax = mean(tmax, na.rm = TRUE))
+```
+
+```{r}
+ggplot(ny_noaa_summary, aes(x = month, y = avg_tmax)) +
+  geom_bar(stat = "identity", fill = "skyblue") +
+  labs(title = "Average Maximum Temperature by Month",
+       x = "Month",
+       y = "Average Max Temperature (°C)") +
+  theme_minimal()
+```
+
+
