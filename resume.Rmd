@@ -1,7 +1,8 @@
 ---
-title: "Academic and Professional Experience
+title: "Academic and Professional Experience"
 output: html_document
 ---
+
 
 # Education
 - **Master of Public Health** - Columbia University (2025)

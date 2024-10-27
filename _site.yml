@@ -2,13 +2,16 @@ name: "My Personal Website"
 output_dir: "."
 navbar:
   title: "My Website"
-  right:
-    - text: "About"
-      href: about.html
-    - icon: fa-envelope fa-lg
-      href: mailto:<kab2310@cumc.columbia.edu>
+left:
+    - text: "Home"
+      href: index.html
+    - text: "Resume"
+      href: resume.html
+right:
     - icon: fa-github fa-lg
-      href: http://github.com/<KAB2310>/
+      href: https://github.com/kab2310
+    - icon: fa-envelope fa-lg
+      href: mailto:kab2310@cumc.columbia.edu
 output:
   html_document:
     theme: cerulean
