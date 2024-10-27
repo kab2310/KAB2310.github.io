@@ -1,5 +1,5 @@
 ---
-title: "Data Dashboard"
+title: "NY NOAA Data Dashboard"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -14,29 +14,29 @@ library(tidyr)
 library(lubridate)
 library(janitor)
 ```
-
-  {data-width=650}
 -----------------------------------------------------------------------
 
 #### I am loading the NY NOAA dataset from the p8105 dataset. I decided to randomly sample 1000 from the complete dataset as it is pretty large.
 
 ```{r}
+#Load data
 data("ny_noaa", package = "p8105.datasets")
 ny_noaa_sample <- ny_noaa |>
   filter(!is.na(tmax)) |> 
   slice_sample(n = 1000)
 ```
- {data-width=350}
 -----------------------------------------------------------------------
 
 ### Plots for NY NOAA Data.
 
-#### Scatterplot of Precipitation vs. Temperature
+### Scatterplot of Temperature vs. Precipitation
+
 ```{r}
 plot_ly(ny_noaa_sample, x = ~tmax, y = ~prcp, type = 'scatter', mode = 'markers') |>
-  layout(title = "Scatter Plot of Temperature vs. Precipitation",
+  layout(title = "Scatter Plot of Temperature vs Precipitation",
          xaxis = list(title = "Max Temperature (tmax)"),
          yaxis = list(title = "Precipitation (prcp)"))
+
 ```
 
 ##### Line Plot of Max Temperature Over Time
